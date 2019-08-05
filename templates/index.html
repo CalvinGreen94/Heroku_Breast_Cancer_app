@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Breast Cancer Detection APP</title>
+<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+  <style>
+div.a {
+        text-align: center;
+}
+</style>
+ <p><h1><font color="#6699CC"> Breast Cancer Detection</h1> </font></p>
+</body>
+
+<body>
+  <style>
+div.a {
+        text-align: center;
+}
+</style>
+<div class="a">
+
+  <div class="login">
+
+    <h1 class="lg-heading">Breast Cancer Detection</h1>
+
+    <h3 class="sm-heading">
+      Enter the required numerical inputs to get a Deep Learning
+      Classification prediction for Breast Cancer
+    </h3>
+    <div style="height:150px;width:600px;overflow:scroll;overflow-x:scroll;overflow-y:scroll;">
+    <h3>
+
+      <ol type="I">
+
+        <ul class="json" class="tit3" style="list-style-type:disc;">
+
+          <li>V1: Radius_mean - mean of distances from center to points on the perimeter</li>
+          <li>V2: Texture_mean - standard deviation of gray-scale values</li>
+          <li>V3: Perimeter_mean- mean size of the core tumor</li>
+          <li>V4: Area Mean</li>
+          <li>V5: smoothness_mean - mean of local variation in radius lengths</li>
+          <li>V6: compactness_mean - mean of perimeter^2 / area - 1.0</li>
+          <li>V7:concavity_mean - mean of severity of concave portions of the contour</li>
+          <li>V8: concave points_mean - mean for number of concave portions of the contour</li>
+          <li>V9: Symmetry Mean</li>
+          <li>V10: fractal_dimension_mean - mean for "coastline approximation" - 1</li>
+          <li>v11: radius_se - standard error for the mean of distances from center to points on the perimeter</li>
+          <li>v12: texture_se - standard error for standard deviation of gray-scale values</li>
+          <li>v13: Perimiter se</li>
+          <li>v14: smoothness se -standard error for local variation in radius lengths</li>
+          <li>v15: Compactness se - compactness_sestandard error for perimeter^2 / area - 1.0</li>
+          <li>v16: concavity se - compactness_sestandard error for perimeter^2 / area - 1.0</li>
+          <li>v17: concave points se- standard error for number of concave portions of the contour</li>
+          <li>v18: Symmetry se </li>
+          <li>v19: fractal_dimension_sestandard error for "coastline approximation" - 1 </li>
+          <li>v20: radius_worst - "worst" or largest mean value for mean of distances from center to points on the perimeter</li>
+          <li>v21: texture_worst - "worst" or largest mean value for standard deviation of gray-scale values</li>
+          <li>v22: Permiter Worst</li>
+          <li>v23: Area Worst</li>
+          <li>v24: smoothness_worst - "worst" or largest mean value for local variation in radius lengths</li>
+          <li>v25:compactness_worst - "worst" or largest mean value for perimeter^2 / area - 1.0</li>
+          <li>v25: concavity_worst - "worst" or largest mean value for severity of concave portions of the contour</li>
+          <li>v26: concave points_worst - "worst" or largest mean value for number of concave portions of the contour</li>
+          <li>v27: Symmetry Worst</li>
+          <li>v28: fractal_dimension_worst"worst" or largest mean value for "coastline approximation" - 1</li?
+        </ul>
+
+      </ol> -->
+      0 = BENIGN,
+      1 = MALIGNANT,
+      FALSE = DOES NOT HAVE BREAST CANCER ,
+      TRUE = HAS BREAST CANCER
+
+    </h3>
+  </div>
+
+
+    <!-- Main Input For Receiving Query to our ML -->
+    <div style="height:150px;width:600px;overflow:scroll;overflow-x:scroll;overflow-y:scroll;">
+      <!-- border:solid 2px orange; -->
+
+      <form action="{{ url_for('Breast_Cancer') }}" method="post">
+        <input
+
+          type="text"
+
+          name="Radius"
+
+          placeholder="radius_mean"
+
+          required="required"
+
+        />
+        <input
+
+          type="text"
+
+          name="Texture"
+
+          placeholder="Texture Mean "
+
+          required="required"
+
+        />
+        <input
+
+          type="text"
+
+          name="Perimiter"
+
+          placeholder="Perimiter Mean"
+
+          required="required"
+
+        />
+
+        <input
+
+          type="text"
+
+          name="Area"
+
+          placeholder="Area Mean"
+
+          required="required"
+
+        />
+
+        <input
+
+          type="text"
+
+          name="Smoothness"
+
+          placeholder="Smoothness Mean"
+
+          required="required"
+
+        />
+
+        <input
+
+          type="text"
+
+          name="Compactness"
+
+          placeholder="Compactness Mean"
+
+          required="required"
+
+        />
+
+
+        <input
+
+          type="text"
+
+          name="Concavity"
+
+          placeholder="Concavity Mean"
+
+          required="required"
+
+        />
+        <input
+
+          type="text"
+
+          name="Concave Points"
+
+          placeholder="Concave Points Mean "
+
+          required="required"
+
+        />
+        <input
+
+          type="text"
+
+          name="Symmetry "
+
+          placeholder="Symmetry Mean "
+
+          required="required"
+
+        />
+
+        <input
+
+          type="text"
+
+          name="Fractal Dimensions"
+
+          placeholder="Fractal Dimensions Mean"
+
+          required="required"
+
+        />
+        <input
+
+          type="text"
+
+          name="Radius se"
+
+          placeholder="Radius se"
+
+          required="required"
+
+        />
+        <input
+
+          type="text"
+
+          name="Texture se"
+
+          placeholder="Texture se"
+
+          required="required"
+
+        />
+        <input
+
+          type="text"
+
+          name="Perimiter se"
+
+          placeholder="Perimiter se"
+
+          required="required"
+
+        />
+
+        <input
+
+          type="text"
+
+          name="Area se"
+
+          placeholder="Area se"
+
+          required="required"
+
+        />
+        <input
+
+          type="text"
+
+          name="Smoothness e"
+
+          placeholder="Smoothness se"
+
+          required="required"
+
+        />
+        <input
+
+          type="text"
+
+          name="Compactness se"
+
+          placeholder="Compactness se"
+
+          required="required"
+
+        />
+        <input
+
+          type="text"
+
+          name="Concavity se"
+
+          placeholder="Concavity se"
+
+          required="required"
+
+        />
+        <input
+
+          type="text"
+
+          name="Concavity Points se"
+
+          placeholder="Concavity Points se"
+
+          required="required"
+
+        />
+        <input
+
+          type="text"
+
+          name="Symmetry se"
+
+          placeholder="Symmetry se"
+
+          required="required"
+
+        />
+        <input
+
+          type="text"
+
+          name="Fractal dimension se"
+
+          placeholder="Fractal dimension se"
+
+          required="required"
+
+        />
+        <input
+
+          type="text"
+
+          name="Radius Worst"
+
+          placeholder="Radius Worst"
+
+          required="required"
+
+        />
+
+        <input
+
+          type="text"
+
+          name="Texture Worst"
+
+          placeholder="Texture Worst"
+
+          required="required"
+
+        />
+        <input
+
+          type="text"
+
+          name="Perimiter Worst"
+
+          placeholder="Perimiter Worst"
+
+          required="required"
+
+        />
+        <input
+
+          type="text"
+
+          name="Area Worst"
+
+          placeholder="Area Worst"
+
+          required="required"
+
+        />
+        <input
+
+          type="text"
+
+          name="Smoothness Worst"
+
+          placeholder="Smoothness Worst"
+
+          required="required"
+
+        />
+        <input
+
+          type="text"
+
+          name="Compactness Worst"
+
+          placeholder="Compactness Worst"
+
+          required="required"
+
+        />
+        <input
+
+          type="text"
+
+          name="Concavity Worst"
+
+          placeholder="Texture Worst"
+
+          required="required"
+
+        />
+        <input
+
+          type="text"
+
+          name="Concave Points Worst"
+
+          placeholder="Concave Points Worst"
+
+          required="required"
+
+        />
+        <input
+
+          type="text"
+
+          name="Symmetry Worst"
+
+          placeholder="Symmetry Worst"
+
+          required="required"
+
+        />
+        <input
+
+          type="text"
+
+          name="Fractal Dimension Worst"
+
+          placeholder="Fractal Dimension Worst"
+
+          required="required"
+
+        />
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict Churn</button>
+
+
+      <font color="#FF33CC"> {{ prediction_text }} </font>
+
+    </form>
+  </div>
+</div>
+
+ <!-- </body> -->
+
+<!-- </div> -->
+</body>
+</html>
