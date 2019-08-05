@@ -32,7 +32,7 @@ def Breast_Cancer():
     final_features = [np.array(int_features)]
     prediction_proba = model.predict(final_features)
     prediction = (prediction_proba > 0.5)
-    return render_template('index.html', prediction_text='THANK YOU FOR YOUR PURCHASE, \n FOR THE DATA YOU ENTERED {}\n IT IS PREDICTED {} \n THAT THE CUSTOMER WILL LEAVE BANK.'.format(int_features,prediction))
+    return render_template('index.html', prediction_text='THANK YOU FOR YOUR PURCHASE, \n FOR THE DATA YOU ENTERED \n IT IS PREDICTED {} \n THAT THE PATIENT HAS BREAST CANCER.'.format(prediction))
 
 if __name__ == "__main__":
     app.run(debug=True, port=8080) #debug=True,host="0.0.0.0",port=50000
